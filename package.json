@@ -4,7 +4,6 @@
   "description": "Fast efficient stream parser for wikipedia dump (named *wiki*-pages-articles.xml.*)",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit"
   },
   "keywords": [
     "parser",
