@@ -1,0 +1,25 @@
+{
+  "name": "wikipedia-dump-stream-parser",
+  "version": "1.0.0",
+  "description": "Fast efficient stream parser for wikipedia dump (named *wiki*-pages-articles.xml.*)",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit"
+  },
+  "keywords": [
+    "parser",
+    "wikipedia",
+    "dump",
+    "javascript"
+  ],
+  "author": "mhzedd@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^8.0.27",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "xml-element-stream": "0.0.4"
+  }
+}
