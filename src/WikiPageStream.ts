@@ -26,17 +26,20 @@ export class WikiPageStream extends Transform {
   // override
   _write(e: Element, encoding, callback) : void {
     if (e.findChild('redirect') == null) {
-      let id = ++Id;
-      if (id > this.nskip) {
-        let page: WikiPage = {
-          id,
-          title: e.findChild('title').text,
-          content: texify(e.findFirstDescendant('text').text)
-        };
-        this.push(page);
+      let textElement = e.findFirstDescendant('text');
+      if (textElement && textElement.text) {
+        let id = ++Id;
+        let titleElement = e.findChild('title');
+        if (id > this.nskip) {
+          let page: WikiPage = {
+            id,
+            title: titleElement? titleElement.text : "<NA>",
+            content: texify(textElement.text)
+          };
+          this.push(page);
+        }
       }
     }
-
     callback();
   }
   

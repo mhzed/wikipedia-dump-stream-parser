@@ -1,10 +1,9 @@
 {
   "name": "wikipedia-dump-stream-parser",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Fast efficient stream parser for wikipedia dump (named *wiki*-pages-articles.xml.*)",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "parser",
     "wikipedia",
