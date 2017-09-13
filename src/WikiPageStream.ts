@@ -22,9 +22,10 @@ export class WikiPageStream extends Transform {
     ret.nskip = nskip;
     return ret;
   }
-
+  
+  
   // override
-  _write(e: Element, encoding, callback) : void {
+  _transform(e: Element, encoding, callback) : void {
     if (e.findChild('redirect') == null) {
       let textElement = e.findFirstDescendant('text');
       if (textElement && textElement.text) {
@@ -32,7 +33,7 @@ export class WikiPageStream extends Transform {
         let titleElement = e.findChild('title');
         if (id > this.nskip) {
           let page: WikiPage = {
-            id,
+            id: id,
             title: titleElement? titleElement.text : "<NA>",
             content: texify(textElement.text)
           };
